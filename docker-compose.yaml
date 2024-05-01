@@ -125,6 +125,8 @@ services:
       retries: 5
       start_period: 30s
     restart: always
+    volumes:
+      - ./app.py:/home/airflow/.local/lib/python3.12/site-packages/airflow/www/app.py
     depends_on:
       <<: *airflow-common-depends-on
       airflow-init:

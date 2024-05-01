@@ -120,6 +120,7 @@ def create_app(config=None, testing=False):
         )
         cookie_samesite_config = "Lax"
     flask_app.config["SESSION_COOKIE_SAMESITE"] = cookie_samesite_config
+    flask_app.config["SEND_FILE_MAX_AGE_DEFAULT"] = timedelta(seconds=43200)
 
     if config:
         flask_app.config.from_mapping(config)
